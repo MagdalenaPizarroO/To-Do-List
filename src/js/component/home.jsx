@@ -33,9 +33,9 @@ const Home = () => {
     fetch(url, {
       method: "PUT",
       headers: {
-        "Content-Type": "application/json",
+        "Content-Type": "application/json", //como le enviamos un string (linea 38), se le indica al server que debe convertirlo back into json format
       },
-      body: JSON.stringify([...tareas, nuevaTarea]),
+      body: JSON.stringify([...tareas, nuevaTarea]), //stringify convierte el formato JS a un string para enviarlo a la API
     })
       .then((response) => response.json())
       .then((data) => setTareas([...tareas, nuevaTarea]))
